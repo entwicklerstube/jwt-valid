@@ -1,0 +1,52 @@
+{
+  "name": "jwt-valid",
+  "version": "1.0.0",
+  "description": "Pass a jwt token and get a boolean if the token is valid",
+  "keywords": "jwt, jwt valid, jwt still valid, valid, valid",
+  "main": "build/index.js",
+  "repository": "https://github.com/entwicklerstube/jwt-valid",
+  "author": "Michael J. Zoidl",
+  "license": "MIT",
+  "scripts": {
+    "build": "rimraf build && mkdir build && babel index.js --out-dir build",
+    "prepublish": "yarn run standard && yarn run test && yarn run build",
+    "test": "mocha test.js --require mocha --compilers js:babel-core/register",
+    "standard": "standard --env mocha",
+    "nyc": "nyc --require babel-core/register --require './mocha.js' mocha test.js",
+    "coverage": "yarn run nyc && nyc report --reporter=text-lcov | coveralls",
+    "prepublish": "yarn run test && yarn run build"
+  },
+  "files": [
+    "build"
+  ],
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "standard": {
+    "ignore": [
+      "build"
+    ],
+    "globals": [
+      "expect"
+    ]
+  },
+  "nyc": {
+    "exclude": [
+      "build",
+      "test.js",
+      "mocha.js"
+    ]
+  },
+  "devDependencies": {
+    "babel-cli": "^6.24.0",
+    "babel-preset-es2015": "^6.24.0",
+    "chai": "^3.5.0",
+    "mocha": "^3.2.0",
+    "nyc": "^10.1.2",
+    "rimraf": "^2.6.1",
+    "standard": "^9.0.2",
+    "coveralls": "^2.12.0"
+  }
+}
