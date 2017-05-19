@@ -1,7 +1,7 @@
 export const parseBase64ByPlattform = base64String => {
   if (!base64String || !isValidBase64(base64String)) throw new Error('No valid base64 passed')
 
-  if(typeof window === 'undefined' && (process && process.version !== 'undefined')) {
+  if (typeof window === 'undefined' && (process && process.version !== 'undefined')) {
     return Buffer.from(base64String, 'base64').toString()
   } else {
     return window.atob(base64String)
@@ -16,18 +16,19 @@ export const isValidBase64 = base64String => {
 }
 
 export const parseJwtToken = jwtToken => {
-  if(!jwtToken) throw new Error('No valid JWT token passed')
+  if (!jwtToken) return false
+  if (typeof jwtToken !== 'string') return false
 
   const jwtTokenParts = jwtToken.split('.')
-  if(jwtTokenParts.length !== 3) throw new Error('No valid JWT token passed')
+  if (jwtTokenParts.length !== 3) return false
 
   try {
-    const header = JSON.parse(parseBase64ByPlattform(jwtTokenParts[0]))
-    const payload = JSON.parse(parseBase64ByPlattform(jwtTokenParts[1]))
-    const signature = jwtTokenParts[2]
-
-    return { header, payload, signature }
+    JSON.parse(parseBase64ByPlattform(jwtTokenParts[0]))
+    JSON.parse(parseBase64ByPlattform(jwtTokenParts[1]))
+    return true
   } catch (err) {
-    throw new Error('No valid JWT token passed')
+    return false
   }
 }
+
+export default parseJwtToken
