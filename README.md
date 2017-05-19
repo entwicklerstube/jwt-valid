@@ -5,7 +5,6 @@
 [![Coverage Status](https://coveralls.io/repos/github/entwicklerstube/jwt-valid/badge.svg?branch=master)](https://coveralls.io/github/entwicklerstube/jwt-valid?branch=master)
 [![Build Status](https://travis-ci.org/entwicklerstube/jwt-valid.svg?branch=master)](https://travis-ci.org/entwicklerstube/jwt-valid)
 [![devDependencies Status](https://david-dm.org/entwicklerstube/jwt-valid/dev-status.svg)](https://david-dm.org/entwicklerstube/jwt-valid?type=dev)
-[![greenkeeper badge](https://badges.greenkeeper.io/entwicklerstube/jwt-valid.svg)](https://greenkeeper.io/)
 
 ### Install
 **npm**
