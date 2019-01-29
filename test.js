@@ -1,4 +1,4 @@
-import { parseBase64ByPlattform, isValidBase64, parseJwtToken } from './index'
+import { parseBase64ByPlattform, parseJwtToken } from './index'
 
 const jwtToken = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJqd3QiOiJpcyBhd2Vzb21lISJ9.j8Z3twgi5nCrZJXH1JoxfQ8q1u5btwr3vS3wyqfytOo'
 
