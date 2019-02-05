@@ -1,9 +1,9 @@
 {
   "name": "is-jwt-valid",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Pass a jwt token and get a boolean if the token is valid",
   "keywords": ["jwt", "jwt valid", "jwt still valid", "valid"],
-  "main": "index.js",
+  "main": "build/index.js",
   "repository": "https://github.com/levinunnink/jwt-valid",
   "author": "Michael J. Zoidl",
   "license": "MIT",
