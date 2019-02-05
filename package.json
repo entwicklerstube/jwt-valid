@@ -1,20 +1,19 @@
 {
-  "name": "jwt-valid",
-  "version": "1.1.0",
+  "name": "is-jwt-valid",
+  "version": "1.0.2",
   "description": "Pass a jwt token and get a boolean if the token is valid",
-  "keywords": "jwt, jwt valid, jwt still valid, valid, valid",
+  "keywords": ["jwt", "jwt valid", "jwt still valid", "valid"],
   "main": "build/index.js",
-  "repository": "https://github.com/entwicklerstube/jwt-valid",
+  "repository": "https://github.com/levinunnink/jwt-valid",
   "author": "Michael J. Zoidl",
   "license": "MIT",
   "scripts": {
     "build": "rimraf build && mkdir build && babel index.js --out-dir build",
-    "prepublish": "yarn run standard && yarn run test && yarn run build",
+    "prepublish": "npm run-script standard && npm run-script test && npm run-script build",
     "test": "mocha test.js --require mocha --compilers js:babel-core/register",
     "standard": "standard --env mocha",
     "nyc": "nyc --require babel-core/register --require './mocha.js' mocha test.js",
-    "coverage": "yarn run nyc && nyc report --reporter=text-lcov | coveralls",
-    "prepublish": "yarn run test && yarn run build"
+    "coverage": "npm run-script nyc && nyc report --reporter=text-lcov | coveralls"
   },
   "files": [
     "build"
